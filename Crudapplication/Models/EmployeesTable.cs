@@ -5,13 +5,13 @@ using System.Collections.Generic;
 
 namespace Crudapplication.Models;
 
-public partial class Employee
+public partial class EmployeesTable
 {
     public int id { get; set; }
 
     public string name { get; set; }
 
-    public string department { get; set; }
-
     public string position { get; set; }
+
+    public string department { get; set; }
 }

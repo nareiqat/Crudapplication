@@ -10,4 +10,11 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.8" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="efpt.config.json.user" />
+    <None Include="wwwroot\index.html" />
+    <None Include="wwwroot\script.js" />
+    <None Include="wwwroot\styles.css" />
+  </ItemGroup>
+
 </Project>

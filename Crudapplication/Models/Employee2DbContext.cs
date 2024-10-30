@@ -13,7 +13,29 @@ public partial class Employee2DbContext : DbContext
     {
     }
 
-    public virtual DbSet<Employee> Employees { get; set; }
+    public virtual DbSet<EmployeesTable> EmployeesTables { get; set; }
 
- 
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<EmployeesTable>(entity =>
+        {
+            entity.HasKey(e => e.id).HasName("PK__Employee__3213E83F2AEE9EB6");
+
+            entity.ToTable("EmployeesTable");
+
+            entity.Property(e => e.department)
+                .IsRequired()
+                .HasMaxLength(100);
+            entity.Property(e => e.name)
+                .IsRequired()
+                .HasMaxLength(100);
+            entity.Property(e => e.position)
+                .IsRequired()
+                .HasMaxLength(100);
+        });
+
+        OnModelCreatingPartial(modelBuilder);
+    }
+
+    partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 }
